@@ -1,0 +1,181 @@
+2014/02/21 16:01:10 [error] [php] include(Client.php): failed to open stream: No such file or directory (/Users/zxmeng/nginx/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): spl_autoload_call()
+#1 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#2 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): SiteController->runAction()
+#4 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/zxmeng/nginx/yii/dubai/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/dubai/index.php?r=site/index
+in /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php (34)
+in /Users/zxmeng/nginx/yii/dubai/index.php (13)
+2014/02/21 16:20:02 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:16 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:18 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:18 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:19 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:19 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:40 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:41 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:20:41 [error] [exception.CException] exception 'CException' with message 'Alias "packages.redis.ARedisConnection" is invalid. Make sure it points to an existing directory or file.' in /Users/zxmeng/nginx/yii/framework/YiiBase.php:347
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/framework/YiiBase.php(196): YiiBase::import('packages.redis....', true)
+#1 /Users/zxmeng/nginx/yii/framework/base/CModule.php(386): YiiBase::createComponent(Array)
+#2 /Users/zxmeng/nginx/yii/framework/base/CModule.php(103): CModule->getComponent('redis')
+#3 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): CModule->__get('redis')
+#4 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): CController->run('')
+#9 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#10 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Users/zxmeng/nginx/yii/dubai/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/dubai/index.php
+---
+2014/02/21 16:53:27 [error] [php] include(Client.php): failed to open stream: No such file or directory (/Users/zxmeng/nginx/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php(34): spl_autoload_call()
+#1 /Users/zxmeng/nginx/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#2 /Users/zxmeng/nginx/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Users/zxmeng/nginx/yii/framework/web/CController.php(286): SiteController->runAction()
+#4 /Users/zxmeng/nginx/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /Users/zxmeng/nginx/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Users/zxmeng/nginx/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Users/zxmeng/nginx/yii/dubai/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/dubai/index.php
+in /Users/zxmeng/nginx/yii/dubai/protected/controllers/SiteController.php (34)
+in /Users/zxmeng/nginx/yii/dubai/index.php (13)
