@@ -77,7 +77,6 @@ $array = array(
 // or
 $user = User::model()->find();
 
-var_dump($user->getPrimaryKey());
 
  echo "<pre>";
  echo count($user);
@@ -85,10 +84,6 @@ var_dump($user->getPrimaryKey());
  echo "</pre>";
 
 
-
- $user->login = "xx***xxx";
- $user->update(array("login"),true);
- $user->delete();
 // Models will be automatically populated with embedded documents that they contain,
 // so we can do:
 
