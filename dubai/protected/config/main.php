@@ -75,9 +75,9 @@ return array(
 			),
 		),
 		*/
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+		// 'db'=>array(
+		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+		// ),
 		// uncomment the following to use a MySQL database
 		/*
 		'db'=>array(
@@ -97,7 +97,7 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					// 'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
 				/*
