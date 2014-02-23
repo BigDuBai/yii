@@ -1,13 +1,16 @@
 <?php
 class User extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $personal_no;
-    public $login;
-    public $first_name;
-    public $last_name;
     public $email;
-    public $arr;
-    public $_id;
+    public $email_validate;
+    public $password;
+    public $qq;
+    public $mobile;
+    public $mobile_validate;
+    public $nickname;
+    public $grade;
+    public $login_sum;
+    public $username;
 
     /**
      * This method have to be defined in every Model
@@ -15,16 +18,17 @@ class User extends EMongoDocument // Notice: We extend EMongoDocument class inst
      */
     public function getCollectionName()
     {
-        return 'users';
+        return 'user';
     }
  
     // We can define rules for fields, just like in normal CModel/CActiveRecord classes
     public function rules()
     {
         return array(
-            array('login, email, personal_no', 'required'),
-            //array('personal_no', 'numeric', 'integerOnly' => true),
-            array('email', 'email'),
+            array('email','email')
+            // array('login, email, personal_no', 'required'),
+            // //array('personal_no', 'numeric', 'integerOnly' => true),
+            // array('email', 'email'),
         );
     }
  
@@ -32,32 +36,18 @@ class User extends EMongoDocument // Notice: We extend EMongoDocument class inst
     public function attributeNames()
     {
         return array(
-            'email' => 'email','login'=>'login','address'=>'address','arr'=>'arr',
+            'email' => 'email',
+            'email_validate'=>'email_validate',
+            'password'=>'password',
+            'qq'=>'qq',
+            'mobile'=>'mobile_validate',
+            'nickname'=>'nickname',
+            'grade'=>'grade',
+            'login_sum'=>'login_sum',
+            'username'=>'username',
             '_id'=>"_id",
         );
     }
-
-    public function embeddedDocuments()
-    {
-        return array(
-            // property field name => class name to use for this embedded document
-            'address' => 'UserAddress',
-        );
-    }
-
-    public $addresses;
- 
-    // Add EEmbeddedArraysBehavior
-    // public function behaviors()
-    // {
-    //     return array(
-    //         'embeddedArrays' => array(
-    //             'class'=>'ext.YiiMongoDbSuite.extra.EEmbeddedArraysBehavior',
-    //             'arrayPropertyName'=>'addresses',       // name of property, that will be used as an array
-    //             'arrayDocClassName'=>'UserAddress'    // class name of embedded documents in array
-    //         ),
-    //     );
-    // }
  
     /**
      * This method have to be defined in every model, like with normal CActiveRecord
