@@ -1,7 +1,7 @@
 <?php
 class AdResource extends EMongoEmbeddedDocument
 {
-    public $resourceId;
+    public $image;
     public $link;
     public $desc;
  
@@ -16,7 +16,7 @@ class AdResource extends EMongoEmbeddedDocument
  
     // And attribute names too
     public function attributeNames() { return array(
-            "resourceId"=>"resourceId",
+            "image"=>"image",
             "link"=>"link",
             "desc"=>"desc",
         ); 
