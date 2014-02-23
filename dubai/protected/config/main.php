@@ -45,8 +45,8 @@ return array(
 	'components'=>array(
 		'mongodb' => array(
 	        'class'            => 'EMongoDB',
-	        'connectionString' => 'mongodb://localhost',
-	        'dbName'           => 'hello',
+	        'connectionString' => 'mongodb://192.168.0.198',
+	        'dbName'           => 'dubai',
 	        'fsyncFlag'        => true,
 	        'safeFlag'         => true,
 	        'useCursor'        => false

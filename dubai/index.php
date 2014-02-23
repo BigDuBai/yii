@@ -17,5 +17,5 @@ Yii::createWebApplication($config)->run();
 function echoToMobile($result)
 {
 	header('Content-type: application/json');
-	echo json_encode($result,JSON_UNESCAPED_UNICODE)
+	echo json_encode($result,JSON_UNESCAPED_UNICODE);
 }
