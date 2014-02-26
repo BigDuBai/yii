@@ -13,6 +13,7 @@ class AdResource extends EMongoEmbeddedDocument
             // ...
         );
     }
+    
  
     // And attribute names too
     public function attributeNames() { return array(
