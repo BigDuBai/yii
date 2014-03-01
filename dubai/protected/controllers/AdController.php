@@ -18,7 +18,12 @@ class AdController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$result = Ad::model()->find();
+		$array = array(
+			'conditions' => array(
+				'images.image'=>array('=='=>'001')
+			), 
+		);
+		$result = Ad::model()->find($array);
 
 		if(!empty($result))
 		{
