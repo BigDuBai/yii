@@ -26,11 +26,22 @@ class Ad extends EMongoDocument // Notice: We extend EMongoDocument class instea
     public function attributeNames()
     {
         return array(
-            'ad' => 'ad',
+            //'ad' => 'ad',
             'images'=>'images',
             'type'=>'type',
             '_id'=>"_id",
         );
+    }
+
+    public function attributeLabels()
+    {
+        return array(
+            //'ad' => 'ad',
+            'images'=>'images',
+            'type'=>'类型',
+            '_id'=>"_id",
+        );
+
     }
  
     // Add EEmbeddedArraysBehavior
