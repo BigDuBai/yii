@@ -17,5 +17,15 @@ Yii::createWebApplication($config)->run();
 function echoToMobile($result)
 {
 	header('Content-type: application/json');
-	echo json_encode($result,JSON_UNESCAPED_UNICODE);
+	echo json_encode(editId($result),JSON_UNESCAPED_UNICODE);
+}
+
+function editId($data)
+{
+	if(isset($data['_id']))
+	{
+		$data['id'] = (string)$data['_id'];
+	}
+	unset($data['_id']);
+	return $data;
 }

@@ -21,6 +21,11 @@ class SiteController extends Controller
 		);
 	}
 
+	public function actionMm()
+	{
+		echo "hello";
+	}
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
