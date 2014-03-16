@@ -49,6 +49,11 @@ class SiteController extends Controller
 		}
 	}
 
+	public function actionUpload()
+	{
+		$upload_handler = new UploadHandler();
+	}
+
 	/**
 	 * Displays the contact page
 	 */

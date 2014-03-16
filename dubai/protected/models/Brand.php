@@ -2,7 +2,7 @@
 class Brand extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
     public $name_zn;
-    public $name_en
+    public $name_en;
     public $code;
     public $desc_zn;
     public $desc_en;
@@ -33,8 +33,8 @@ class Brand extends EMongoDocument // Notice: We extend EMongoDocument class ins
     public function attributeNames()
     {
         return array(
-            '$name_zn' => '$name_zn',
-            '$name_en' => '$name_en',
+            'name_zn' => 'name_zn',
+            'name_en' => 'name_en',
             'code'=>'code',
             'desc_zn'=>'desc_zn',
             'desc_en'=>'desc_en',
