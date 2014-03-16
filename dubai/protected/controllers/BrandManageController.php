@@ -56,7 +56,12 @@ class BrandManageController extends Controller
             $value->_id = (string)$value->_id;
             foreach ($value as $key1=>$value1) {
                 if(in_array($key1, $resultColumn))
-                    array_push($tmp, $value1);
+                {
+                    if($key1=='thumb')
+                        array_push($tmp, "<img src='/dubai/files/{$$value1}' class='img-thumnail' alrt=''>")
+                    else
+                        array_push($tmp, $value1);
+                }
             }
             array_push($tmp, '<a href="javascript:;" data-id="'.$value->_id.'" class="btn btn-xs red btn-removable"><i class="fa fa-times"></i> Delete</a> ');
             array_push($records["aaData"], $tmp);
