@@ -32,10 +32,8 @@ class HomeController extends Controller
             $local = "zn";
         }
         if ($local=="zn") {
-            $desc_field ='desc_zn';
             $name_field = 'name_zn';
         } else {
-            $desc_field ='desc_en';
             $name_field = 'name_en';
         }
         $result = HomeInfo::model()->findAll();
@@ -56,7 +54,6 @@ class HomeController extends Controller
             ),
             'select'=>array('channel','images.image'=>1,'images.link'=>1,'images.linktype'=>1),
         );
-
         $result = Ad::model()->find($query);
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result->images));
