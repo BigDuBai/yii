@@ -1,9 +1,9 @@
 <?php
 class Ad extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $type;
+    public $category;
+    public $id;
     public $images;
- 
 
     /**
      * This method have to be defined in every Model
@@ -28,21 +28,11 @@ class Ad extends EMongoDocument // Notice: We extend EMongoDocument class instea
         return array(
             //'ad' => 'ad',
             'images'=>'images',
-            'type'=>'type',
+            'category'=>'category',
             '_id'=>"_id",
         );
     }
 
-    public function attributeLabels()
-    {
-        return array(
-            //'ad' => 'ad',
-            'images'=>'images',
-            'type'=>'类型',
-            '_id'=>"_id",
-        );
-
-    }
  
     // Add EEmbeddedArraysBehavior
     public function behaviors()
@@ -55,7 +45,7 @@ class Ad extends EMongoDocument // Notice: We extend EMongoDocument class instea
             ),
         );
     }
- 
+
     /**
      * This method have to be defined in every model, like with normal CActiveRecord
      */

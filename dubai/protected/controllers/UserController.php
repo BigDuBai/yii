@@ -30,7 +30,6 @@ class UserController extends Controller
 			echoToMobile();
 	}
 
-
 	public function actionEditUser($id)
 	{
 		$user = User::model()->findByPk(new MongoID($id));

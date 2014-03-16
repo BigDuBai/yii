@@ -1,16 +1,16 @@
 <?php
-class Brand extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
+class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $name_zn;
-    public $name_en
-    public $code;
+    public $id;
+    public $category;
+    public $image;
+    public $link;
     public $desc_zn;
     public $desc_en;
-    public $thumb;
-    public $image;
-    public $website;
-    public $firstChart;
-    public $spell;
+    public $name_zn;
+    public $name_en;
+    public $sort;
+
 
     /**
      * This method have to be defined in every Model
@@ -18,7 +18,7 @@ class Brand extends EMongoDocument // Notice: We extend EMongoDocument class ins
      */
     public function getCollectionName()
     {
-        return 'brand';
+        return 'homeInfo';
     }
  
     // We can define rules for fields, just like in normal CModel/CActiveRecord classes
@@ -28,25 +28,37 @@ class Brand extends EMongoDocument // Notice: We extend EMongoDocument class ins
         
         );
     }
- 
+
     // the same with attribute names
     public function attributeNames()
     {
         return array(
-            '$name_zn' => '$name_zn',
-            '$name_en' => '$name_en',
-            'code'=>'code',
+            'image'=>'image',
+            'link'=>'link',
             'desc_zn'=>'desc_zn',
             'desc_en'=>'desc_en',
-            'thumb'=>'thumb',
-            'image'=>'image',
-            'website'=>'website',
+            'name_zn'=>'name_zn',
+            'name_en'=>'desc_en',
+            'category'=>'category',
+            'sort'=>'sort',
             '_id'=>"_id",
-            'firstChart'=>'firstChart',
-            'spell'=>'spell',
         );
     }
- 
+
+    public function getEmbeddedArrays()
+    {
+        return array (
+
+        );
+    }
+
+    public function getLocalKeys()
+    {
+        return array(
+            "desc"=>"desc","name"=>"name"
+        );
+    }
+
     /**
      * This method have to be defined in every model, like with normal CActiveRecord
      */

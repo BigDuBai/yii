@@ -1,11 +1,15 @@
 <?php
 class Category extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $name;
+    public $id;
+    public $name_en;
+    public $name_zn;
     public $code;
     public $icon;
-    public $desc;
- 
+    public $desc_en;
+    public $desc_zn;
+    public $parentId;
+    public $sort;
 
     /**
      * This method have to be defined in every Model
@@ -28,14 +32,19 @@ class Category extends EMongoDocument // Notice: We extend EMongoDocument class 
     public function attributeNames()
     {
         return array(
-            'name' => 'name',
+            'name_en' => 'name_en',
+            'name_zn' => 'name_zn',
             'code'=>'code',
-            'desc'=>'desc',
+            'desc_zn'=>'desc_zn',
+            'desc_en'=>'desc_en',
             'icon'=>'icon',
+            'parentId'=>'parentId',
+            'sort'=>'sort',
             '_id'=>"_id",
         );
     }
- 
+
+
     /**
      * This method have to be defined in every model, like with normal CActiveRecord
      */
