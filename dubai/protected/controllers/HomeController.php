@@ -24,7 +24,7 @@ class HomeController extends Controller
      * TODO 翻页，排序
      *
      */
-    public function actionGetHomeInfo()
+    public function actionGetHomeInfo($updatetime=0)
     {
         if(isset($_SESSION["local"])) {
             $local = $_SESSION["local"];
@@ -36,6 +36,16 @@ class HomeController extends Controller
         } else {
             $name_field = 'name_en';
         }
+
+        $query = array(
+            'conditions' => array(
+                'updatetime'=>array('>='=>$updatetime)
+            ),
+            'select'=>array('channel','images.image'=>1,'images.link'=>1,'images.linktype'=>1,'updatetime'),
+            'limit'=>10,
+            'order'=>'updatetime desc'
+        );
+
         $result = HomeInfo::model()->findAll();
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result));

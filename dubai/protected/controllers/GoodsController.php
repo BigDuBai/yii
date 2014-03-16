@@ -37,6 +37,7 @@ class GoodsController extends Controller
      * @param bool $price 商品价格排序
      * @param int $sales 商品销售量排序
      * @param null $position 上次查询的商品ID
+     *
      */
     public function actionGetGoods($brandids=NUll,$categoryids=NULL,$tags=NULL,$keys=NULL,$hot=true,$price=true,$sales=true,$position=NULL) {
         if(isset($_SESSION["local"])) {
@@ -53,27 +54,36 @@ class GoodsController extends Controller
         }
         $array = array(
             //'conditions' => array('parentId'=>array('=='=>$categoryId)),
-            'select'=>array($name_field=>1,$desc_field=>1,'icon'=>1,'sales'=>1,'originPrice'=>1),
+            'select'=>array($name_field=>1,$desc_field=>1,'icon'=>1,'sales'=>1,'originPrice'=>1,'_id'=>1),
         );
         $result = Goods::model()->findAll();
         $resultColl = array();
         if (!empty($result)) {
-            $goodsArr = $result->toArray();
-            for($index=0;$index<) {
-
-            }
-            foreach($goodsArr as $key => $value) {
-                $resultColl[$key] = $value;
-                if (preg_match("/(_zn|_en)/",$key)) {
-                    $fields = preg_split("/_/",$key);
-                    if ($fields[1]==$local) {
-                        $resultColl[$fields[0]] = $value;
-                    }
-                } else {
-
+            $len = count($result);
+            for($index=0;$index<$len;$index++) {
+                $aitem = array();
+                $aitem['name'] = $result[$index][$name_field];
+                $aitem['desc'] = $result[$index][$desc_field];
+                $aitem['id'] = (string)$result[$index]['_id'];
+                $aitem['originPrice'] = $result[$index]['originPrice'];
+                $aitem['icon'] = $result[$index]['icon'];
+                $aitem['sales'] = $result[$index]['sales'];
+                $goodskey = constant('hashkey_goods').$aitem['id'];
+                $gfilelds = Yii::app()->redis->HGETALL($goodskey);
+                //当前价格
+                if(!empty($gfilelds)) {
+                    $aitem['curprice'] = $gfilelds[‘curprice’];
+                    //销售量
+                    $aitem['salesNum'] = $gfilelds[‘salesNum’];
+                    //收藏数
+                    $aitem['favoritesNum'] = $gfilelds[‘favoritesNum’];
+                    //评价
+                    $aitem['commentNum'] = $gfilelds[‘commentNum’];
                 }
+                //添加Redis Cache Key.
+                array_push($resultColl,$aitem);
             }
         }
-        //
+        echoToMobile($resultColl);
     }
 }
