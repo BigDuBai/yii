@@ -64,7 +64,7 @@ class HomeController extends Controller
             'conditions' => array(
                 'category'=>array('=='=>constant("type_ad"))
             ),
-            'select'=>array('images.image'=>1,'images.link'=>1,$desc_field=>1),
+            'select'=>array('category','images.image'=>1,'images.link'=>1),
         );
 
         $result = Ad::model()->find($query);
