@@ -58,7 +58,7 @@ class BrandManageController extends Controller
                 if(in_array($key1, $resultColumn))
                 {
                     if($key1=='thumb')
-                        array_push($tmp, "<img src='/dubai/files/{$value1}' class='img-thumnail' alrt=''>");
+                        array_push($tmp, "<img src='/dubai/files/{$value1}' class='img-thumnail' style='max-height:100px' alrt=''>");
                     else
                         array_push($tmp, $value1);
                 }
