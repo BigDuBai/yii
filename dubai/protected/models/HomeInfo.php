@@ -6,6 +6,7 @@ class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class 
     public $link;
     public $desc_zn;
     public $desc_en;
+    public $updatetime;
 
 
     /**
@@ -34,6 +35,7 @@ class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class 
             'desc_zn'=>'desc_zn',
             'desc_en'=>'desc_en',
             'category'=>'category',
+            'updatetime'=>'updatetime',
         );
     }
 

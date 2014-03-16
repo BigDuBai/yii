@@ -1,21 +1,25 @@
 <?php
 class Goods extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
+    public $id;
+    public $desc_zn;
+    public $name_zn;
+    public $desc_en;
+    public $name_en;
+    public $originPrice;
+    public $icon;
+
+    public $images;
     public $brand;
     public $categoryCode;
     public $code;
-    public $images;
     public $inventory;
     public $material;
-    public $originPrice;
     public $placeOfOrigin;
     public $sales;
     public $shelfTime;
     public $size;
     public $tags;
-    public $desc;
-    public $name;
- 
 
     /**
      * This method have to be defined in every Model
@@ -38,9 +42,12 @@ class Goods extends EMongoDocument // Notice: We extend EMongoDocument class ins
     public function attributeNames()
     {
         return array(
-            'name' => 'name',
+            'name_zn' => 'name_zn',
+            'name_en' => 'name_en',
+            'desc_zn'=>'desc_zn',
+            'desc_en'=>'desc_en',
+            'icon'=>'icon',
             'code'=>'code',
-            'desc'=>'desc',
             'brand'=>'brand',
             'images'=>'images',
             'inventory'=>'inventory',
