@@ -1,7 +1,7 @@
 <?php
 class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $category;
+    public $channel;
     public $image;
     public $link;
     public $desc_zn;
@@ -34,7 +34,7 @@ class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class 
             'link'=>'link',
             'desc_zn'=>'desc_zn',
             'desc_en'=>'desc_en',
-            'category'=>'category',
+            'channel'=>'channel',
             'updatetime'=>'updatetime',
         );
     }
