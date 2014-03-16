@@ -58,7 +58,7 @@ class HomeController extends Controller
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result->images));
         }
-
+        
     }
 
     /**
