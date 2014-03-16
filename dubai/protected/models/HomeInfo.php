@@ -1,15 +1,11 @@
 <?php
 class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
-    public $id;
     public $category;
     public $image;
     public $link;
     public $desc_zn;
     public $desc_en;
-    public $name_zn;
-    public $name_en;
-    public $sort;
 
 
     /**
@@ -37,11 +33,7 @@ class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class 
             'link'=>'link',
             'desc_zn'=>'desc_zn',
             'desc_en'=>'desc_en',
-            'name_zn'=>'name_zn',
-            'name_en'=>'desc_en',
             'category'=>'category',
-            'sort'=>'sort',
-            '_id'=>"_id",
         );
     }
 
