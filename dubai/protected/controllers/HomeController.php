@@ -50,21 +50,11 @@ class HomeController extends Controller
      */
     public function actionGetHomeAd()
     {
-        if(isset($_SESSION["local"])) {
-            $local = $_SESSION["local"];
-        } else {
-            $local = "zn";
-        }
-        if ($local=="zn") {
-            $desc_field ='images.desc_zn';
-        } else {
-            $desc_field ='images.desc_en';
-        }
         $query = array(
             'conditions' => array(
-                'category'=>array('=='=>constant("type_ad"))
+                'channel'=>array('=='=>constant("channel_homepage"))
             ),
-            'select'=>array('category','images.image'=>1,'images.link'=>1),
+            'select'=>array('channel','images.image'=>1,'images.link'=>1,'images.linktype'=>1),
         );
 
         $result = Ad::model()->find($query);

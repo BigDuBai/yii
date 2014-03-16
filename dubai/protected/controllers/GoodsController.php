@@ -56,8 +56,23 @@ class GoodsController extends Controller
             'select'=>array($name_field=>1,$desc_field=>1,'icon'=>1,'sales'=>1,'originPrice'=>1),
         );
         $result = Goods::model()->findAll();
+        $resultColl = array();
         if (!empty($result)) {
-            echoToMobile(ModelConvertUtil::convert($result));
+            $goodsArr = $result->toArray();
+            for($index=0;$index<) {
+
+            }
+            foreach($goodsArr as $key => $value) {
+                $resultColl[$key] = $value;
+                if (preg_match("/(_zn|_en)/",$key)) {
+                    $fields = preg_split("/_/",$key);
+                    if ($fields[1]==$local) {
+                        $resultColl[$fields[0]] = $value;
+                    }
+                } else {
+
+                }
+            }
         }
         //
     }
