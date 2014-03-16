@@ -32,16 +32,15 @@ class HomeController extends Controller
             $local = "zn";
         }
         if ($local=="zn") {
-            $name_field = 'name_zn';
+            $desc_field ='desc_zn';
         } else {
-            $name_field = 'name_en';
+            $desc_field ='desc_en';
         }
-
         $query = array(
             'conditions' => array(
                 'updatetime'=>array('>='=>$updatetime)
             ),
-            'select'=>array('channel','images.image'=>1,'images.link'=>1,'images.linktype'=>1,'updatetime'),
+            'select'=>array('channel','image','link',$desc_field,'updatetime'),
             'limit'=>10,
             'order'=>'updatetime desc'
         );
