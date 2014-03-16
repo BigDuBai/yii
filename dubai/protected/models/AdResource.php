@@ -3,9 +3,7 @@ class AdResource extends EMongoEmbeddedDocument
 {
     public $image;
     public $link;
-    public $desc;
-    public $desc_en;
-    public $desc_zn;
+    public $linktype;
     // We may define rules for embedded document too
     public function rules()
     {
@@ -21,8 +19,7 @@ class AdResource extends EMongoEmbeddedDocument
         return array(
             "image"=>"image",
             "link"=>"link",
-            "desc_zn"=>"desc_zn",
-            "desc_en"=>"desc_en",
+            "linktype"=>"linktype",
         );
     }
 
