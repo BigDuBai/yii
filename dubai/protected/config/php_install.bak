@@ -1,0 +1,1 @@
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-curl --with-zlib --enable-ftp  --enable-inline-optimization --disable-debug --with-gd --with-zlib -enable-xml  --enable-exif --enable-soap --enable-zip --with-openssl --enable-mbstring --with-mhash --with-tidy --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd  --enable-fpm
