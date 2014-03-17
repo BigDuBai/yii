@@ -29,6 +29,7 @@ class GoodsController extends Controller
     }
 
     /**
+     * 获得商品列表
      * @param null $brandids 筛选的品牌列表
      * @param null $categoryids 筛选的产品列表
      * @param null $tags 筛选的标签列表
@@ -52,6 +53,17 @@ class GoodsController extends Controller
             $desc_field ='desc_en';
             $name_field = 'name_en';
         }
+        var conditionsArr = array();
+        if ($brandids!=null) {
+
+        }
+        if ($categoryids!=null) {
+
+        }
+        if ($tags!=null) {
+
+        }
+
         $array = array(
             //'conditions' => array('parentId'=>array('=='=>$categoryId)),
             'select'=>array($name_field=>1,$desc_field=>1,'icon'=>1,'sales'=>1,'originPrice'=>1,'_id'=>1),

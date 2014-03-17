@@ -5,8 +5,7 @@ class HomeController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions()
-	{
+	public function actions() {
 		return array();
 	}
 
@@ -21,7 +20,7 @@ class HomeController extends Controller
 
     /**
      * 得到首页推荐
-     * TODO 翻页，排序
+     * 翻页，排序
      *
      */
     public function actionGetHomeInfo($updatetime='0')
@@ -38,7 +37,7 @@ class HomeController extends Controller
         }
         $query = array(
             'conditions' => array(
-                'updatetime'=>array('>='=>$updatetime)
+                'updatetime'=>array('>'=>$updatetime)
             ),
             'select'=>array('channel','image','link',$desc_field,'updatetime'),
             'limit'=>10,
@@ -53,7 +52,7 @@ class HomeController extends Controller
 
     /**
      * 得到首页广告
-     * TODO 排序
+     * 排序
      */
     public function actionGetHomeAd()
     {
@@ -67,7 +66,6 @@ class HomeController extends Controller
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result->images));
         }
-        
     }
 
     /**
