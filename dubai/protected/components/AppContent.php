@@ -29,3 +29,5 @@ define('trade','trade');
 define('share','share');
 define('favorites','favorites');
 define('comment','comment');
+define('datapak_path','/usr/local/data/');
+define('image_path','/usr/local/image/');

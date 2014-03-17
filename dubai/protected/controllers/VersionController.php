@@ -28,7 +28,7 @@ class VersionController extends Controller
      * 获得更新的版本数据
      * @param $versionNo
      */
-    public function actionGetVersionData($versionNo) {
+    public function actionGetUpdateData($versionNo=0) {
         $resultArr = array();
         $resultArr['version'] = $versionNo;
         $result = Version::model()->find();
@@ -37,10 +37,14 @@ class VersionController extends Controller
            $curv = $result->toArray()['versionNo'];
            if ($curv>$versionNo) {
                $resultArr['version'] = $curv;
+               $sqlarr = array();
                for($index=$versionNo+1;$index<=$curv;$index++) {
-
+                   $arrf = file(constant('datapak_path').$index.'.version');
+                   $sqlarr = array_merge($sqlarr,$arrf);
                }
+               $resultArr['sqls'] = $sqlarr;
            }
         }
+        echoToMobile($resultArr);
     }
 }

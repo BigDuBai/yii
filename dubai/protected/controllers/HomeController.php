@@ -23,7 +23,7 @@ class HomeController extends Controller
      * 翻页，排序
      *
      */
-    public function actionGetHomeInfo($updatetime='0')
+    public function actionGetHomeInfo($updatetime=0)
     {
         if(isset($_SESSION["local"])) {
             $local = $_SESSION["local"];
@@ -47,6 +47,8 @@ class HomeController extends Controller
         $result = HomeInfo::model()->findAll($query);
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result));
+        } else {
+            echoToMobile(array());
         }
     }
 
