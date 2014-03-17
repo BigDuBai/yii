@@ -6,7 +6,7 @@ class HomeInfo extends EMongoDocument // Notice: We extend EMongoDocument class 
     public $link;
     public $desc_zn;
     public $desc_en;
-    public $updatetime
+    public $updatetime;
 
 
     /**
