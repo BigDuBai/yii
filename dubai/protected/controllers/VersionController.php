@@ -13,18 +13,6 @@ class VersionController extends Controller
 
 
     /**
-     * 获得版本信息
-     */
-    public function actionGetVersion()
-    {
-        $result = Version::model()->find();
-        if(!empty($result))
-        {
-            echoStringToMobile($result->toArray()['versionNo']);
-        }
-    }
-
-    /**
      * 获得更新的版本数据
      * @param $versionNo
      */

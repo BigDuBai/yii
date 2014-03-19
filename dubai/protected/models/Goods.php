@@ -2,24 +2,41 @@
 class Goods extends EMongoDocument // Notice: We extend EMongoDocument class instead of CActiveRecord
 {
     public $id;
-    public $desc_zn;
     public $name_zn;
-    public $desc_en;
     public $name_en;
     public $originPrice;
     public $icon;
-
     public $images;
     public $brand;
-    public $categoryCode;
+    public $category;
     public $code;
-    public $inventory;
-    public $material;
-    public $placeOfOrigin;
-    public $sales;
-    public $shelfTime;
+    //商品简介
+    public $desc_zn;
+    public $desc_en;
+    //材质
+    public $material_en;
+    public $material_zn;
+    //原产地
+    public $placeOfOrigin_en;
+    public $placeOfOrigin_zn;
+    //尺寸
     public $size;
+
+    //库存
+    public $inventory;
+    //是否售卖的商品
+    public $sales;
+    //允许上架时间
+    public $shelfTime;
+
+    //标签
     public $tags;
+    public $technology;
+
+    //品牌地址
+    public $shopimage;
+    //品牌图片
+    public $shopaddress;
 
     /**
      * This method have to be defined in every Model
@@ -51,19 +68,23 @@ class Goods extends EMongoDocument // Notice: We extend EMongoDocument class ins
             'brand'=>'brand',
             'images'=>'images',
             'inventory'=>'inventory',
-            'categoryCode'=>'categoryCode',
-            'material'=>'material',
+            'category'=>'category',
             'originPrice'=>'originPrice',
-            'placeOfOrigin'=>'placeOfOrigin',
+            '$technology'=>'$technology',
             'sales'=>'sales',
             'shelfTime'=>'shelfTime',
             'size'=>'size',
             'tags'=>'tags',
-            'shelfTime'=>'shelfTime',
+            "material_en"=>"material_en",
+            "material_zn"=>"material_zn",
+            "placeOfOrigin_en"=>"placeOfOrigin_en",
+            "placeOfOrigin_zn"=>"placeOfOrigin_zn",
+            "shopimage"=>"shopimage",
+            "shopaddress"=>"shopaddress",
             '_id'=>"_id",
         );
     }
- 
+
     /**
      * This method have to be defined in every model, like with normal CActiveRecord
      */

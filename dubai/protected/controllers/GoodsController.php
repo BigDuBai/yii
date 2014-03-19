@@ -12,7 +12,6 @@ class GoodsController extends Controller
 		);
 	}
 
-
     /**
      * 获得商品分类
      * TODO 查询所有子类，排序
@@ -26,6 +25,147 @@ class GoodsController extends Controller
         if(!empty($result)) {
             echoToMobile(ModelConvertUtil::convert($result));
         }
+    }
+
+
+    /**
+     * 获得商品评论
+     *
+     */
+    public function actionGetGoodsTalk() {
+
+    }
+
+    /**
+     * 添加商品评论
+     */
+    public function actionAddGoodsTalk() {
+
+    }
+
+    /**
+     * 得到商品技术规格
+     *
+     * @param $id
+     */
+    public function actionGetGoodsTechnology($id) {
+        if(isset($_SESSION["local"])) {
+            $local = $_SESSION["local"];
+        } else {
+            $local = "zn";
+        }
+        if ($local=="zn") {
+            $technology_field='technology_zn';
+        } else {
+            $technology_field='technology_en';
+        }
+        $query = array(
+            'conditions' => array('_id'=>array('=='=>$id)),
+            'select'=>array($technology_field,'_id',),
+        );
+        $result = Goods::model()->find($query);
+        $ra = array();
+        if (!empty($result)) {
+            $ra['technology'] = $result[$technology_field];
+        } else {
+            $ra['technology'] = "";
+        }
+        echoStringToMobile($result);
+    }
+
+    /**
+     * 得到商品详情
+     *
+     * @param $id
+     */
+    public function actionGetGoodsDetail($id) {
+        $goodsResult = array();
+        if(isset($_SESSION["local"])) {
+            $local = $_SESSION["local"];
+        } else {
+            $local = "zn";
+        }
+        if ($local=="zn") {
+            $desc_field ='desc_zn';
+            $name_field = 'name_zn';
+            $material_field='material_zn';
+            $placeOfOrigin_field='placeOfOrigin_zn';
+        } else {
+            $desc_field ='desc_en';
+            $name_field = 'name_en';
+            $material_field='material_en';
+            $placeOfOrigin_field='placeOfOrigin_en';
+        }
+        $mongoid = new MongoId($id);
+        $query = array(
+            'conditions' => array('_id'=>array('=='=>$mongoid)),
+            'select'=>array($name_field,$desc_field,$material_field,$placeOfOrigin_field,'shopimage','shopaddress','originPrice','sales','size','shelfTime','images','_id'),
+        );
+        $result = Goods::model()->find($query);
+        if (!empty($result)) {
+            $goodsResult['name'] = $result->toArray()[$name_field];
+            $goodsResult['desc'] = $result->toArray()[$desc_field];
+            $goodsResult['size'] = $result->toArray()['size'];
+            $goodsResult['material'] = $result->toArray()[$material_field];
+            $goodsResult['placeOfOrigin'] = $result->toArray()[$placeOfOrigin_field];
+            $goodsResult['images'] = $result->toArray()['images'];
+            $goodsResult['shelfTime'] = $result->toArray()['shelfTime'];
+            $goodsResult['sales'] = $result->toArray()['sales'];
+            $goodsResult['size'] = $result->toArray()['size'];
+            $goodsResult['shopimage'] = $result->toArray()['shopimage'];
+            $goodsResult['shopaddress'] = $result->toArray()['shopaddress'];
+            $goodsResult['id'] = (string)$result->toArray()['_id'];
+            echoToMobile($goodsResult);
+        }
+    }
+
+    /**
+     * 获得sales信息
+     * @param $id 商品ID
+     */
+    public function actionGetSalesPaid($id) {
+        //0表示进行中
+        $qauction = array(
+            'conditions' => array('goods'=>array('=='=>$id),'$state'=>array('=='=>0)),
+        );
+        $auctionInfo = GoodsAuctioninfo::model()->find($qauction);
+        if (!empty($auctionInfo)) {
+            $auctionarray = $auctionInfo->toArray();
+            $auctionid = $auctionInfo['_id'];
+            $paidquery = array(
+                'conditions' => array('goods'=>array('=='=>$id),'$auction'=>array('=='=>$auctionid)),
+                'limit'=>3,
+                'order'=>'price asc'
+            );
+            $salespaid = SalesPaid::model()->findAll($paidquery);
+            if (!empty($salespaid)) {
+                $len = count($salespaid);
+                for($index=0;$index<$len;$index++) {
+                    $item = array();
+                    $item['price'] = $salespaid[$index]['price'];
+                    //TODO 获取slales信息
+                    $item['sales'] = getSales($salespaid[$index]['sales']);
+                }
+            }
+        }
+    }
+
+    /**
+     * @param $salesid
+     */
+    private function getSales($salesid) {
+        $query = array(
+            'conditions' => array('_id'=>array('=='=>$salesid)),
+        );
+        $qresult = Sales::model()->find($query);
+        $result = array();
+        if (!empty($qresult)) {
+            $result['sales'] = $qresult->toArray()['nickname'];
+            $result['shop'] = $qresult->toArray()['shop'];
+            $result['address'] = $qresult->toArray()['address'];
+            $result['images'] = $qresult->toArray()['images'];
+        }
+        return $result;
     }
 
     /**
@@ -53,20 +193,9 @@ class GoodsController extends Controller
             $desc_field ='desc_en';
             $name_field = 'name_en';
         }
-        var conditionsArr = array();
-        if ($brandids!=null) {
-
-        }
-        if ($categoryids!=null) {
-
-        }
-        if ($tags!=null) {
-
-        }
-
-        $array = array(
+        $query = array(
             //'conditions' => array('parentId'=>array('=='=>$categoryId)),
-            'select'=>array($name_field=>1,$desc_field=>1,'icon'=>1,'sales'=>1,'originPrice'=>1,'_id'=>1),
+            'select'=>array($name_field,$desc_field,'icon','sales','originPrice','_id'),
         );
         $result = Goods::model()->findAll();
         $resultColl = array();
